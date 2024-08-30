@@ -17,7 +17,7 @@ class CoffeeDetailPage extends StatefulWidget {
 class _CoffeeDetailPageState extends State<CoffeeDetailPage> {
   bool favorite = false;
   bool isExpanded = false;
-  String selectedSize = 'M'; // Default selected size
+  String selectedSize = 'M';
 
   @override
   Widget build(BuildContext context) {
