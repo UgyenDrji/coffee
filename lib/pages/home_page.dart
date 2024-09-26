@@ -38,7 +38,7 @@ class HomePage extends StatelessWidget {
                             style: myStyle(16, Colors.white),
                             underline: Container(),
                             icon: Icon(Icons.arrow_drop_down_circle_sharp, color: Colors.white),
-                            items: <String>['Select a Location    ', 'Tshring', 'Haa', 'Thimphu', 'Mongar']
+                            items: <String>['Select Location    ', 'Tshring', 'Haa', 'Thimphu', 'Mongar']
                                 .map<DropdownMenuItem<String>>((String value) {
                               return DropdownMenuItem<String>(
                                 value: value,
