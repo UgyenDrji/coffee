@@ -21,158 +21,158 @@ class HomePage extends StatelessWidget {
             children: [
               Stack(
                   clipBehavior: Clip.none,
-                children:[ Container(
-                  padding: EdgeInsets.all(10),
-                  height: MediaQuery.of(context).size.height * 0.35,
-                  width: double.infinity,
-                  color: three,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text('Location', style: myStyle(16, Colors.white)),
-                      Row(
-                        children: [
-                          Obx(() => DropdownButton<String>(
-                            value: homeController.selectedLocation.value,
-                            dropdownColor: Colors.black87,
-                            style: myStyle(16, Colors.white),
-                            underline: Container(),
-                            icon: Icon(Icons.arrow_drop_down_circle_sharp, color: Colors.white),
-                            items: <String>['Select Location    ', 'Tshring', 'Haa', 'Thimphu', 'Mongar']
-                                .map<DropdownMenuItem<String>>((String value) {
-                              return DropdownMenuItem<String>(
-                                value: value,
-                                child: Text(value),
-                              );
-                            }).toList(),
-                            onChanged: (String? newValue) {
-                              homeController.updateLocation(newValue!);
-                            },
-                          )),
-                        ],
-                      ),
-                      Gap(10),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Container(
-                            height: MediaQuery.of(context).size.height*0.06,
-                            width: MediaQuery.of(context).size.width*0.8,
-                            child: TextFormField(
-                              controller: homeController.searchController,
-                              onChanged: (value) {
-                                homeController.filterSearchResults(value);
-                              },
-                              style: myStyle(18, Colors.white),
-                              decoration: InputDecoration(
-                                hintStyle: TextStyle(color: Colors.white),
-                                hintText: 'Search...',
-                                prefixIcon: Icon(Icons.search, color: Colors.white, size: 30),
-                                enabledBorder: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(20),
-                                  borderSide: BorderSide(color: Colors.white),
-                                ),
-                                focusedBorder: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(20),
-                                  borderSide: BorderSide(color: Colors.white),
-                                ),
-                              ),
-                            ),
-                          ),
-                          Container(
-                            height: 45,
-                            width: 50,
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10),
-                                color: one
-                            ),
-                            child: Icon(Icons.filter_list, color: Colors.white,),
-                          )
-                        ],
-                      ),
-                    ],
-                  ),
-                ),
-                  Gap(10),
-                  Positioned(
-                    left: 20,
-                    bottom: -60,
+                  children:[ Container(
+                    padding: EdgeInsets.all(10),
+                    height: MediaQuery.of(context).size.height * 0.35,
+                    width: double.infinity,
+                    color: three,
                     child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Container(
-                          height: MediaQuery.of(context).size.height * 0.20,
-                          width: MediaQuery.of(context).size.width * 0.9,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(20),
-                              color: Colors.brown
-                          ),
-                          child: Stack(
-                            children: [
-                              Positioned(
-                                top: -23,
-                                right: -10,
-                                child: Container(
-                                  height: 170,
-                                  width: 200,
-                                  child: Image.asset('assets/image/coff-removebg-preview.png',fit: BoxFit.cover,),),
-                              ),
-                              Positioned(
-                                left: 16,
-                                top: 16,
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Container(
-                                        height: 30,
-                                        width: 80,
-                                        decoration: BoxDecoration(
-                                            borderRadius: BorderRadius.circular(10),
-                                            color: Colors.red
-                                        ),
-                                        child: Center(child: Text('Promo', style: TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold,)))
-                                    ),
-                                    SizedBox(height: 20), // Space between text
-                                    Stack(
-                                      clipBehavior: Clip.none,
-                                      children:[ Container(
-                                          height: MediaQuery.of(context).size.height*0.03,
-                                          width: MediaQuery.of(context).size.width*0.4,
-                                          decoration: BoxDecoration(
-                                              color: three
-                                          ),
-                                      ),
-                                        Positioned(
-                                            top: -10,
-                                            right: 5,
-                                            child: Text('Buy one get', style: myStyle(24, Colors.white, FontWeight.bold),))
-                                      ]
-                                    ),
-                                    SizedBox(height: 15), // Space between text
-                                    Stack(
-                                      clipBehavior: Clip.none,
-                                      children:[ Container(
-                                          height: MediaQuery.of(context).size.height*0.03,
-                                          width: MediaQuery.of(context).size.width*0.33,
-                                          decoration: BoxDecoration(
-                                              color: three
-                                          ),
-                                      ),
-                                        Positioned(
-                                            top: -10,
-                                            right: 5,
-                                            child:  Text('none FREE', style: myStyle(22, Colors.white, FontWeight.bold),)),
-                                      ]
-                                    ),
-                                  ],
+                        Text('Location', style: myStyle(16, Colors.white)),
+                        Row(
+                          children: [
+                            Obx(() => DropdownButton<String>(
+                              value: homeController.selectedLocation.value,
+                              dropdownColor: Colors.black87,
+                              style: myStyle(16, Colors.white),
+                              underline: Container(),
+                              icon: Icon(Icons.arrow_drop_down_circle_sharp, color: Colors.white),
+                              items: <String>['Select a Location    ', 'Tshring', 'Haa', 'Thimphu', 'Mongar']
+                                  .map<DropdownMenuItem<String>>((String value) {
+                                return DropdownMenuItem<String>(
+                                  value: value,
+                                  child: Text(value),
+                                );
+                              }).toList(),
+                              onChanged: (String? newValue) {
+                                homeController.updateLocation(newValue!);
+                              },
+                            )),
+                          ],
+                        ),
+                        Gap(10),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Container(
+                              height: MediaQuery.of(context).size.height*0.06,
+                              width: MediaQuery.of(context).size.width*0.8,
+                              child: TextFormField(
+                                controller: homeController.searchController,
+                                onChanged: (value) {
+                                  homeController.filterSearchResults(value);
+                                },
+                                style: myStyle(18, Colors.white),
+                                decoration: InputDecoration(
+                                  hintStyle: TextStyle(color: Colors.white),
+                                  hintText: 'Search...',
+                                  prefixIcon: Icon(Icons.search, color: Colors.white, size: 30),
+                                  enabledBorder: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(20),
+                                    borderSide: BorderSide(color: Colors.white),
+                                  ),
+                                  focusedBorder: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(20),
+                                    borderSide: BorderSide(color: Colors.white),
+                                  ),
                                 ),
                               ),
-                            ],
-                          ),
+                            ),
+                            Container(
+                              height: 45,
+                              width: 50,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10),
+                                  color: one
+                              ),
+                              child: Icon(Icons.filter_list, color: Colors.white,),
+                            )
+                          ],
                         ),
                       ],
                     ),
                   ),
-                ]
+                    Gap(10),
+                    Positioned(
+                      left: 20,
+                      bottom: -60,
+                      child: Column(
+                        children: [
+                          Container(
+                            height: MediaQuery.of(context).size.height * 0.20,
+                            width: MediaQuery.of(context).size.width * 0.9,
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(20),
+                                color: Colors.brown
+                            ),
+                            child: Stack(
+                              children: [
+                                Positioned(
+                                  top: -23,
+                                  right: -10,
+                                  child: Container(
+                                    height: 170,
+                                    width: 200,
+                                    child: Image.asset('assets/image/coff-removebg-preview.png',fit: BoxFit.cover,),),
+                                ),
+                                Positioned(
+                                  left: 16,
+                                  top: 16,
+                                  child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+                                      Container(
+                                          height: 30,
+                                          width: 80,
+                                          decoration: BoxDecoration(
+                                              borderRadius: BorderRadius.circular(10),
+                                              color: Colors.red
+                                          ),
+                                          child: Center(child: Text('Promo', style: TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold,)))
+                                      ),
+                                      SizedBox(height: 20), // Space between text
+                                      Stack(
+                                          clipBehavior: Clip.none,
+                                          children:[ Container(
+                                            height: MediaQuery.of(context).size.height*0.03,
+                                            width: MediaQuery.of(context).size.width*0.4,
+                                            decoration: BoxDecoration(
+                                                color: three
+                                            ),
+                                          ),
+                                            Positioned(
+                                                top: -10,
+                                                right: 5,
+                                                child: Text('Buy one get', style: myStyle(24, Colors.white, FontWeight.bold),))
+                                          ]
+                                      ),
+                                      SizedBox(height: 15), // Space between text
+                                      Stack(
+                                          clipBehavior: Clip.none,
+                                          children:[ Container(
+                                            height: MediaQuery.of(context).size.height*0.03,
+                                            width: MediaQuery.of(context).size.width*0.33,
+                                            decoration: BoxDecoration(
+                                                color: three
+                                            ),
+                                          ),
+                                            Positioned(
+                                                top: -10,
+                                                right: 5,
+                                                child:  Text('none FREE', style: myStyle(22, Colors.white, FontWeight.bold),)),
+                                          ]
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ]
               ),
               Gap(80),
               Padding(
@@ -196,7 +196,7 @@ class HomePage extends StatelessWidget {
                               borderRadius: BorderRadius.circular(10),
                               color: isSelected
                                   ? one // Color when selected
-                                  : Colors.grey.withOpacity(0.3), // Color when not selected
+                                  : Colors.grey.withOpacity(0.3),
                             ),
                             child: Center(
                                 child: Text("${name[index].name}", style: myStyle(15,isSelected ? Colors.white : Colors.black, FontWeight.bold),
@@ -300,12 +300,12 @@ class HomePage extends StatelessWidget {
                                       ),
                                       child: IconButton(
                                         onPressed: () {
-                                          Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                              builder: (context) => CoffeeDetailPage(coffee: homeController.filteredData[index]),
-                                            ),
-                                          );
+                                          // Navigator.push(
+                                          //   context,
+                                          //   MaterialPageRoute(
+                                          //     builder: (context) => CoffeeDetailPage(coffee: homeController.filteredData[index]),
+                                          //   ),
+                                          // );
                                         },
                                         icon: Icon(Icons.add),
                                         color: Colors.white,
